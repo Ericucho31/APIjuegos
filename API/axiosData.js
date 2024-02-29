@@ -7,7 +7,7 @@ const axiosData = async () => {
   try {
     const response = await axios.post(
       'https://api.igdb.com/v4/games',
-      "fields *; where id = 1942;",
+      'fields *, cover.*; search "pokémon black 2"; limit 1;',
       {
         headers: {
           'Client-ID': clientId,
@@ -16,7 +16,7 @@ const axiosData = async () => {
         }
       }
     );
-    console.log(response.data + " Dentro de AxiosData"); // Aquí puedes manejar los datos obtenidos
+    console.log(response.data + " Dentro de AxiosData"); 
     return response.data;
 
   } catch (error) {
