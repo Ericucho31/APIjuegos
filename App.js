@@ -3,18 +3,22 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import IGDB from './componentes/IGDB';
 import FontExample from './componentes/FontCompExample';
+import { NavigationContainer, StackRouter } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
+
 
 export default function App() {
   return (
     
-    <View style={styles.container}>
-      <FontExample></FontExample>
-      <StatusBar style="default" backgroundColor='#FF00FF'  />
-
-      
-      
-    </View>
-
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName='Home'>
+          <Stack.Screen name='Home' component={IGDB}/>
+          <Stack.Screen name='SegundaPag' component={FontExample}/>
+        </Stack.Navigator>
+      </NavigationContainer>     
+    
   );
 }
 

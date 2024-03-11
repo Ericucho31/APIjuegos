@@ -7,11 +7,16 @@ const getFonts = () => {
 
 }
 
-const theme = {
+const [fontsLoaded, fontError] = useFonts({
+    'Araboto-Normal': require('../fonts/Araboto_Font_Family_(Fontmirror)/Araboto Bold 400.ttf'),
+    'SharpGrotesk': require('../fonts/SharpGrotesk/SharpGrotesk-Medium20.otf'),
+  });
+
+
+export const theme = {
     colors: {
         textPrimary: '#000'
     }
-
     //useFonts
     //Pokemon: require('ruta')
 }
