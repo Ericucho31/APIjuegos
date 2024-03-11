@@ -7,7 +7,7 @@ const axiosData = async () => {
   try {
     const response = await axios.post(
       'https://api.igdb.com/v4/games',
-      'fields *, cover.*; search "pokémon black 2"; limit 1;',
+      'fields *, cover.*; search "halo"; limit 1;',
       {
         headers: {
           'Client-ID': clientId,
