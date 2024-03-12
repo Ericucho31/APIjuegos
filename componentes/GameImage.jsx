@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Image, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import showImage from "../API/imagenAPI";
 
-export default function GameImage() {
+export default function GameImage( props ) {
     const [coverData, setcoverData] = useState(null);
 
     useEffect(() => {
 
         const fetchImage = async () => {
-            setcoverData(await showImage());
+            setcoverData(await showImage({juego: props.nombre}));
         };
         fetchImage();
     }, []);

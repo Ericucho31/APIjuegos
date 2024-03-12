@@ -4,12 +4,13 @@ import GameImage from "./GameImage";
 import DisplayGameData from "./DisplayGameData";
 import { View } from "react-native-web";
 
-export default function IGDB() {
+export default function IGDB({route }) {
 
+    const { nombre } = route.params; 
     return (
         <ScrollView>
-            <DisplayGameData></DisplayGameData>
-            <GameImage></GameImage>
+            <DisplayGameData nombre= {nombre}></DisplayGameData>
+            <GameImage nombre= {nombre}></GameImage>
         </ScrollView>
     );
 }

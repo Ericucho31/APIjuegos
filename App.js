@@ -11,14 +11,23 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName='Home'>
-          <Stack.Screen name='Home' component={IGDB}/>
-          <Stack.Screen name='SegundaPag' component={FontExample}/>
-        </Stack.Navigator>
-      </NavigationContainer>     
-    
+
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='SegundoJuego'>
+        <Stack.Screen
+          name='Home'
+          component={IGDB}
+          initialParams={{ nombre: "Zelda" }} 
+        />
+        <Stack.Screen name='SegundaPag' component={FontExample} />
+        <Stack.Screen
+          name='SegundoJuego'
+          component={IGDB}
+          initialParams={{ nombre: "Kirby" }} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+
   );
 }
 

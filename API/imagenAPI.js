@@ -1,9 +1,10 @@
 import axios from "axios";
-import axiosData from "./axiosData";
+import axiosData from "../compGuardados/axiosData";
+import axiosPrueba from "./axiosPrueba";
 
-const showImage = async () => {
+const showImage = async ({juego}) => {
 
-    const gameData = await axiosData();
+    const gameData = await axiosPrueba({nombre: juego});
     const cover = await gameData[0].cover.url;
     const url = `https:${cover}`
     const modifiedUri = url.replace('/t_thumb/', '/t_1080p/');

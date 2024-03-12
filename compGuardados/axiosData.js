@@ -7,7 +7,7 @@ const axiosData = async () => {
   try {
     const response = await axios.post(
       'https://api.igdb.com/v4/games',
-      'fields *, cover.*; search "halo"; limit 1;',
+      'fields *, cover.*; search "TeaRS"; limit 1;',
       {
         headers: {
           'Client-ID': clientId,
@@ -16,7 +16,7 @@ const axiosData = async () => {
         }
       }
     );
-    console.log(response.data + " Dentro de AxiosData"); 
+    console.log(response.data[0].name); 
     return response.data;
 
   } catch (error) {

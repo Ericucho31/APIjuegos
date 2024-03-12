@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import axiosData from "../API/axiosData";
+import axiosData from "../compGuardados/axiosData";
+import axiosPrueba from "../API/axiosPrueba";
 
 
-export default function DisplayGameData() {
+export default function DisplayGameData( props ) {
     const [jsonData, setJsonData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            setJsonData(await axiosData());
+            const datos = await axiosPrueba({nombre: props.nombre});
+            const nombre = datos[0].name;
+            setJsonData(nombre);
         };
 
         fetchData();
@@ -19,7 +22,7 @@ export default function DisplayGameData() {
         <ScrollView>
             <View style={styles.view}>
                 {jsonData ? (
-                    <Text>{JSON.stringify(jsonData, null, 2)}</Text>
+                    <Text>{jsonData}</Text>
                 ) : (
                     <Text>Cargando información...</Text>
                 )}
@@ -29,11 +32,6 @@ export default function DisplayGameData() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     view: {
         flex: 1,
         justifyContent: 'center', // Centra verticalmente
