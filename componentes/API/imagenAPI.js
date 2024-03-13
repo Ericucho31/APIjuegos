@@ -1,5 +1,5 @@
 import axios from "axios";
-import axiosData from "../compGuardados/axiosData";
+import axiosData from "../../compGuardados/axiosData";
 import axiosPrueba from "./axiosPrueba";
 
 const showImage = async ({juego}) => {

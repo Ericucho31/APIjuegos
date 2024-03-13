@@ -1,4 +1,4 @@
-import axiosData from "../compGuardados/axiosData"
+import axiosData from "../../compGuardados/axiosData"
 import axiosPrueba from "./axiosPrueba";
 import showImage from "./imagenAPI"
 
@@ -11,7 +11,6 @@ const RenderJuego= async ({nombreJuego}) => {
     
     const mergedObject = await{ ...JSONresultante, ...urlImagen };
     console.log(mergedObject);
-
 
     return mergedObject;
 }

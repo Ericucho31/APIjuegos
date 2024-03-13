@@ -13,17 +13,17 @@ export default function App() {
   return (
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='SegundoJuego'>
+      <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen
           name='Home'
           component={IGDB}
-          initialParams={{ nombre: "Zelda" }} 
+          initialParams={{ nombre: "Kirby" }} 
         />
         <Stack.Screen name='SegundaPag' component={FontExample} />
         <Stack.Screen
           name='SegundoJuego'
           component={IGDB}
-          initialParams={{ nombre: "Kirby" }} 
+          initialParams={{ nombre: "Tears of the kingdom" }} 
         />
       </Stack.Navigator>
     </NavigationContainer>

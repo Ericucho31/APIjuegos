@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Image, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
-import showImage from "../API/imagenAPI";
+import showImage from "./API/imagenAPI";
+import { theme } from "../theme/theme";
 
-export default function GameImage( props ) {
+export default function GameImage(props) {
     const [coverData, setcoverData] = useState(null);
 
     useEffect(() => {
 
         const fetchImage = async () => {
-            setcoverData(await showImage({juego: props.nombre}));
+            setcoverData(await showImage({ juego: props.nombre }));
         };
         fetchImage();
     }, []);
 
     return (
-        <ScrollView contentContainerStyle={imagen.scrollView}>
-            <View style= {imagen.view}>
+        <ScrollView contentContainerStyle={styles.scrollView}>
+            <View style={styles.view}>
                 {coverData ? (
                     <Image
                         source={{ uri: coverData }}
-                        style={imagen.image}
+                        style={styles.image}
                     />
                 ) : (
                     <Text>Cargando imagen...</Text>
@@ -29,7 +30,7 @@ export default function GameImage( props ) {
     );
 }
 
-const imagen = StyleSheet.create({
+const styles = StyleSheet.create({
     scrollView: {
         flex: 1,
         backgroundColor: '#f0f0f0',
@@ -41,15 +42,7 @@ const imagen = StyleSheet.create({
         alignItems: 'center', // Centra horizontalmente
     },
 
-    image: {
-    width: 300,
-    height: 300,
-    flex: 1,
-    alignItems: 'center', // Centra verticalmente los elementos
-    justifyContent: 'center', // Distribuye el espacio entre los elementos
-    backgroundColor: '#FF0F0F',
-    padding: 20,
-},
+    image: theme.images.primary,
 })
 
 

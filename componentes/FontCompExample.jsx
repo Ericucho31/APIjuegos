@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import { theme } from '../theme/theme';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -23,7 +24,7 @@ export default function FontExample() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={{ fontFamily: 'SharpGrotesk', fontSize: 30 }}>SharpGrotesk</Text>
+      <Text style={{ fontFamily: 'SharpGrotesk', fontSize: 30 ,}}>SharpGrotesk</Text>
       <Text style={{ fontSize: 30 }}>Platform Default</Text>
     </View>
   );
@@ -35,4 +36,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  color: {
+    color: theme.colors.primary,
+  }
 });

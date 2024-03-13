@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import axiosData from "../compGuardados/axiosData";
-import axiosPrueba from "../API/axiosPrueba";
+import axiosPrueba from "./API/axiosPrueba";
+import { theme } from "../theme/theme";
 
 
 export default function DisplayGameData( props ) {
@@ -22,9 +22,9 @@ export default function DisplayGameData( props ) {
         <ScrollView>
             <View style={styles.view}>
                 {jsonData ? (
-                    <Text>{jsonData}</Text>
+                    <Text style={styles.text}>{jsonData}</Text>
                 ) : (
-                    <Text>Cargando información...</Text>
+                    <Text style={styles.text}>Cargando información...</Text>
                 )}
             </View>
         </ScrollView>
@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center', // Centra verticalmente
         alignItems: 'center', // Centra horizontalmente
+    },
+
+    text:{
+        color: theme.colors.primary,
+        fontSize: 50,
+
     },
 
 });

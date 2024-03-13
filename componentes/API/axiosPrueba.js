@@ -17,7 +17,6 @@ const axiosPrueba = async ({nombre}) => {
         }
       }
     );
-    console.log(response.data[0].name); 
     return response.data;
 
   } catch (error) {
