@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Image, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import showImage from "./API/imagenAPI";
 import { theme } from "../theme/theme";
+import styleComponent from "../theme/styleComponent";
 
 export default function GameImage(props) {
     const [coverData, setcoverData] = useState(null);
@@ -20,7 +21,7 @@ export default function GameImage(props) {
                 {coverData ? (
                     <Image
                         source={{ uri: coverData }}
-                        style={styles.image}
+                        style={styleComponent.imagePrimary}
                     />
                 ) : (
                     <Text>Cargando imagen...</Text>
@@ -34,10 +35,11 @@ const styles = StyleSheet.create({
     scrollView: {
         flex: 1,
         backgroundColor: '#f0f0f0',
-        padding: 20,
+        padding: 0,
     },
     view: {
         flex: 1,
+        flexDirection:'row',
         justifyContent: 'center', // Centra verticalmente
         alignItems: 'center', // Centra horizontalmente
     },

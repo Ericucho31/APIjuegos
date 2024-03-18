@@ -13,4 +13,5 @@ export default function IGDB({route }) {
             <GameImage nombre= {nombre}></GameImage>
         </ScrollView>
     );
+
 }

@@ -17,7 +17,7 @@ export default function App() {
         <Stack.Screen
           name='Home'
           component={IGDB}
-          initialParams={{ nombre: "Kirby" }} 
+          initialParams={{ nombre: "Halo" }} 
         />
         <Stack.Screen name='SegundaPag' component={FontExample} />
         <Stack.Screen
